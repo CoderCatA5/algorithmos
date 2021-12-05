@@ -31,7 +31,38 @@ const nextFrameGravity=(oldGrid)=>{
                         }
                     }
                 }
-            }   
+            }
+            if(oldGrid[row][col]==='W'){
+                if(row+1<Object.keys(oldGrid).length){
+                    if(newGrid[row+1][col]===0){
+                        newGrid[row][col]=0;
+                        newGrid[row+1][col]='W';
+                    }
+                    else{
+                        if(col>0 && newGrid[row+1][col-1]===0){
+                            newGrid[row][col]=0;
+                            newGrid[row+1][col-1]='W'
+                        }
+                        else{
+                            if(col+1<Object.keys(oldGrid[row]).length && newGrid[row+1][col+1]===0){
+                                newGrid[row][col]=0;
+                                newGrid[row+1][col+1]="W"
+                            }
+                            else{
+                                if(newGrid[row][col-1]===0 && col>0){
+                                    newGrid[row][col]=0;
+                                    newGrid[row][col-1]="W"
+                                }else{
+                                    if(newGrid[row][col+1]===0 && col+1<Object.keys(oldGrid[row]).length){
+                                        newGrid[row][col]=0;
+                                        newGrid[row][col+1]="W"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }    
         }  
     }
     console.log(newGrid,"test");

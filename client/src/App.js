@@ -7,6 +7,7 @@ function App() {
     <div>
       <Clock/>
       <Grid/>
+
     </div>
     
   );
