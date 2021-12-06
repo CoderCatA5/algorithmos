@@ -65,7 +65,7 @@ const nextFrameGravity=(oldGrid)=>{
             }    
         }  
     }
-    console.log(newGrid,"test");
+    
     return newGrid;
 }
 export default nextFrameGravity;

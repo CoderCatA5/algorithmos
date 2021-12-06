@@ -1,9 +1,9 @@
 import React from "react";
-import red from "./svg/red.svg";
-import black from "./svg/black.svg"
-import sand from "./svg/sand.svg"
-import trans from "./svg/trans.png"
-import water from "./svg/water.svg"
+import red from "../svg/red.svg";
+import black from "../svg/black.svg"
+import sand from "../svg/sand.svg"
+import trans from "../svg/trans.png"
+import water from "../svg/water.svg"
 
 const Cell =(props)=>{
     var src=trans;
@@ -13,7 +13,7 @@ const Cell =(props)=>{
     
     const handleClick=()=>{
         const grid=props.grid;
-        grid[props.row][props.col]='W';
+        grid[props.row][props.col]='S';
         props.func(grid);
     }
 
