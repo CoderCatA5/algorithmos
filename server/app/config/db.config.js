@@ -1,3 +1,4 @@
+//use own mongodb url here
 module.exports = {
-  url: "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000/mydb"
+  url: "mongodb+srv://algos:algos@cluster0.ucxlw.mongodb.net/algorithmos?retryWrites=true&w=majority" 
 };

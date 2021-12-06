@@ -23,6 +23,7 @@ class Grid extends React.Component {
             [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
             [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
         ],
+        history:[],
        
       }
     }
@@ -43,13 +44,15 @@ class Grid extends React.Component {
     };
 
     tick(){
-      this.setState({...this.state,grid:nextFrameGravity(this.state.grid)})
+      const history=this.state.history;
+      history.push(this.state.grid);
+      this.setState({...this.state,grid:nextFrameGravity(this.state.grid),history:history})
     }
 
   
     render() {
       var dis_grid=[];
-      console.log(this.state.grid)
+      console.log(this.state.history)
       for (let row = 0; row < this.state.grid.length; row++) {
         for (let col = 0; col < this.state.grid[row].length; col++) {
           dis_grid.push(<Cell key={[row,col]} type={this.state.grid[row][col]} row={row} col={col} func={this.handleClick} grid={this.state.grid}/>)
