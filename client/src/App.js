@@ -1,7 +1,7 @@
 
 import Clock from "./components/Clock";
 
-import Grid from "./components/Grid/Grid";
+import Grid from "./components/Grid";
 function App() {
   return (
     <div>

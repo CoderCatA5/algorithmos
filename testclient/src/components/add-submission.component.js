@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import TutorialDataService from "../services/tutorial.service";
+import SubmissionDataService from "../services/submission.service";
 
-export default class AddTutorial extends Component {
+export default class AddSubmission extends Component {
   constructor(props) {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
-    this.saveTutorial = this.saveTutorial.bind(this);
-    this.newTutorial = this.newTutorial.bind(this);
+    this.saveSubmission = this.saveSubmission.bind(this);
+    this.newSubmission = this.newSubmission.bind(this);
 
     this.state = {
       id: null,
@@ -31,13 +31,13 @@ export default class AddTutorial extends Component {
     });
   }
 
-  saveTutorial() {
+  saveSubmission() {
     var data = {
       title: this.state.title,
       description: this.state.description
     };
 
-    TutorialDataService.create(data)
+    SubmissionDataService.create(data)
       .then(response => {
         this.setState({
           id: response.data.id,
@@ -54,7 +54,7 @@ export default class AddTutorial extends Component {
       });
   }
 
-  newTutorial() {
+  newSubmission() {
     this.setState({
       id: null,
       title: "",
@@ -71,7 +71,7 @@ export default class AddTutorial extends Component {
         {this.state.submitted ? (
           <div>
             <h4>You submitted successfully!</h4>
-            <button className="btn btn-success" onClick={this.newTutorial}>
+            <button className="btn btn-success" onClick={this.newSubmission}>
               Add
             </button>
           </div>
@@ -103,7 +103,7 @@ export default class AddTutorial extends Component {
               />
             </div>
 
-            <button onClick={this.saveTutorial} className="btn btn-success">
+            <button onClick={this.saveSubmission} className="btn btn-success">
               Submit
             </button>
           </div>
