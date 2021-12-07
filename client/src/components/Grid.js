@@ -179,9 +179,17 @@ class Grid extends React.Component {
               </button>
               <div>
                 <p>
-                  So this is some content <br></br>
-                  More content about the topic<br/>
-                  Some more Content<br></br>
+                  Algorithmos is about Visualising algorithms <br></br>
+                  We aim to achive learning of complex simulations<br/>
+                  and algorithms behind simulations using MERN stack<br></br>
+                  <br></br>
+                  <br></br>
+                  SAND:is a simple simulation which follows the given rules<br></br>
+                        If bottom cell empty replace bottom Cell<br/>
+                        Else check bottom left and replace <br/>
+                        
+                  <br/>
+                  
                 </p>
               </div>
             </div>
