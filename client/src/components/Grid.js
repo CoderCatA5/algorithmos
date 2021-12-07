@@ -6,20 +6,23 @@ import Cell from "./Cell";
 import nextFrameGravity from "./logicCell";
 
 
+import "./Grid.css"
 const d_grid=[
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 ]
 
 
@@ -27,7 +30,7 @@ class Grid extends React.Component {
     constructor(props){
         super(props);
 
-        this.onChangeTitle = this.onChangeTitle.bind(this);
+        this.onChangeusername = this.onChangeusername.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.saveSubmission = this.saveSubmission.bind(this);
         this.newSubmission = this.newSubmission.bind(this);
@@ -38,7 +41,7 @@ class Grid extends React.Component {
         inUse:0,
 
         id: null,
-        title: "",
+        username: "",
         description: "", 
         published: false,
         submitted: false
@@ -46,9 +49,9 @@ class Grid extends React.Component {
       }
     }
 
-    onChangeTitle(e) {
+    onChangeusername(e) {
       this.setState({
-        title: e.target.value
+        username: e.target.value
       });
     }
   
@@ -60,7 +63,7 @@ class Grid extends React.Component {
   
     saveSubmission() {
       var data = {
-        title: this.state.title,
+        username: this.state.username,
         description: this.state.description,
         history:JSON.stringify(this.state.history)
       };
@@ -69,7 +72,7 @@ class Grid extends React.Component {
         .then(response => {
           this.setState({
             id: response.data.id,
-            title: response.data.title,
+            username: response.data.username,
             description: response.data.description,
             published: response.data.published,
   
@@ -89,7 +92,7 @@ class Grid extends React.Component {
       inUse:0,
 
       id: null,
-      title: "",
+      username: "",
       description: "", 
       published: false,
       submitted: false
@@ -135,31 +138,31 @@ class Grid extends React.Component {
       }
       
       return (
-        <div className="submit-form">
+        <div className="row" style={{paddingTop:'20px'}}>
           {this.state.submitted ? (
-            <div>
+            <div className="column1">
               <h4>You submitted successfully!</h4>
               <button className="btn btn-success" onClick={this.newSubmission}>
                 Add
               </button>
             </div>
           ) : (
-            <div>
+            <div className="column1">
               <div className="form-group">
-                <label htmlFor="title">Title</label>
+                <label htmlFor="username" style={{fontSize:'30px', fontFamily:'Arial'}}>Username</label>
                 <input
                   type="text"
                   className="form-control"
-                  id="title"
+                  id="username"
                   required
-                  value={this.state.title}
-                  onChange={this.onChangeTitle}
-                  name="title"
+                  value={this.state.username}
+                  onChange={this.onChangeusername}
+                  name="username"
                 />
               </div>
   
               <div className="form-group">
-                <label htmlFor="description">Description</label>
+                <label htmlFor="description" style={{fontSize:'30px', fontFamily:'Arial'}}>Description</label>
                 <input
                   type="text"
                   className="form-control"
@@ -174,9 +177,18 @@ class Grid extends React.Component {
               <button onClick={this.saveSubmission} className="btn btn-success">
                 Submit
               </button>
-              {dis_grid}
+              <div>
+                <p>
+                  So this is some content <br></br>
+                  More content about the topic<br/>
+                  Some more Content<br></br>
+                </p>
+              </div>
             </div>
           )}
+          <div className="column" style={{border:"5px solid"}}>
+            {dis_grid}
+          </div>
         </div>
       );
     }

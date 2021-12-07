@@ -14,7 +14,7 @@ const Cell =(props)=>{
     
     const handleClick=()=>{
         const grid=props.grid;
-        grid[props.row][props.col]='W';
+        grid[props.row][props.col]='S';
         props.func(grid);
     }
 

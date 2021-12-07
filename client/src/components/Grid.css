@@ -1,0 +1,15 @@
+.column1{
+    float:left;
+    width: 18.5%;
+}
+.column{
+    float:right;
+    width: 80%;
+}
+
+.row:after{
+    content:"";
+    display:table;
+    clear:both;
+
+}

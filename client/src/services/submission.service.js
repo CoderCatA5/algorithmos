@@ -25,8 +25,8 @@ class SubmissionDataService {
     return http.delete(`/submissions`);
   }
 
-  findByTitle(title) {
-    return http.get(`/submissions?title=${title}`);
+  findByusername(username) {
+    return http.get(`/submissions?username=${username}`);
   }
 }
 
